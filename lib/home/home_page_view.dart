@@ -11,6 +11,7 @@ class HomePageView extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: Column(
+        spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -19,10 +20,16 @@ class HomePageView extends StatelessWidget {
           },child: Column(
             children: [Icon(Icons.image,color: Colors.red,),Text("Image Parser")],
           ),),
+
           MaterialButton(color:Colors.blue,onPressed:(){
             routeController.routeToRiveExample();
           },child: Column(
             children: [Icon(Icons.r_mobiledata,color: Colors.red,),Text("Rive Example")],
+          ),),
+          MaterialButton(color:Colors.blue,onPressed:(){
+            routeController.routeToFileEncrypter();
+          },child: Column(
+            children: [Icon(Icons.enhanced_encryption,color: Colors.red,),Text("File Encrypter")],
           ),)
 
         ],

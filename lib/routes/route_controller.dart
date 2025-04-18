@@ -43,5 +43,14 @@ class RouteController extends GetxController{
       }
     }
   }
-
+  routeToFileEncrypter({bool shouldRemovePrevious = false}){
+    if(ctx!=null){
+      if(shouldRemovePrevious){
+        ctx?.goNamed(RouteConstants.routeFileEncrypt);
+      }
+      else{
+        ctx?.pushNamed(RouteConstants.routeFileEncrypt);
+      }
+    }
+  }
 }
