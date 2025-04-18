@@ -20,10 +20,14 @@ class FileEncrypterView extends StatelessWidget {
 
           ElevatedButton(onPressed: (){
 fileEncrypterController.encryptAES();
-}, child: Text("Encrypt"))
-        ],
+}, child: Text("Encrypt")),
+             ElevatedButton(onPressed: (){
+               fileEncrypterController.decryptAES();
+             }, child: Text("Decrypt"))
+           ],
     ):SizedBox())
     ]));
   }
+
 
 }
