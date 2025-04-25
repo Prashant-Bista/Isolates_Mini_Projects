@@ -9,6 +9,9 @@ class FileEncrypterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("File Encrypter"),
+      ),
       body: Column(
         children: [
           ElevatedButton(onPressed: (){

@@ -30,7 +30,19 @@ class HomePageView extends StatelessWidget {
             routeController.routeToFileEncrypter();
           },child: Column(
             children: [Icon(Icons.enhanced_encryption,color: Colors.red,),Text("File Encrypter")],
+          ),),
+          MaterialButton(color:Colors.blue,onPressed:(){
+            routeController.routeToImplicitAnimations();
+          },child: Column(
+            children: [Icon(Icons.animation,color: Colors.red,),Text("Implicit Animations")],
+          ),),
+          MaterialButton(color:Colors.blue,onPressed:(){
+            routeController.routeToFlutterLogoRotator();
+          },child: Column(
+            children: [Icon(Icons.flutter_dash,color: Colors.red,),Text("Logo Rotator")],
           ),)
+
+
 
         ],
       ),
