@@ -42,7 +42,8 @@ class HomePageView extends StatelessWidget {
             children: [Icon(Icons.flutter_dash,color: Colors.red,),Text("Logo Rotator")],
           ),),
           MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToHeroTryRouteA();
+            Navigator.of(context).pushNamed("/hero");
+            // routeController.routeToHeroTryRouteA();
           },child: Column(
             children: [Icon(Icons.flutter_dash,color: Colors.red,),Text("Hero Try")],
           ),)
