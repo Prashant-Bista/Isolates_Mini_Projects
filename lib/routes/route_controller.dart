@@ -57,7 +57,28 @@ class RouteController extends GetxController {
         }
       }
     }
-    routeToImplicitAnimations({bool shouldRemovePrevious = false}) {
+  routeToHeroTryRouteA({bool shouldRemovePrevious = false}) {
+    if (ctx != null) {
+      if (shouldRemovePrevious) {
+        ctx?.goNamed(RouteConstants.routeFlutterHeroTryRouteA);
+      }
+      else {
+        ctx?.pushNamed(RouteConstants.routeFlutterHeroTryRouteA);
+      }
+    }
+  }
+  routeToHeroTryRouteB({bool shouldRemovePrevious = false}) {
+    if (ctx != null) {
+      if (shouldRemovePrevious) {
+        ctx?.goNamed(RouteConstants.routeFlutterHeroTryRouteB);
+      }
+      else {
+        ctx?.pushNamed(RouteConstants.routeFlutterHeroTryRouteB);
+      }
+    }
+  }
+
+  routeToImplicitAnimations({bool shouldRemovePrevious = false}) {
       if (ctx != null) {
         if (shouldRemovePrevious) {
           ctx?.goNamed(RouteConstants.routeImplicitAnimations);

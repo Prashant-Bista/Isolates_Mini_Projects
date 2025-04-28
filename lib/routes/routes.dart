@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learning_isolates/file_encrypter/file_encrypter_view.dart';
+import 'package:learning_isolates/hero_try/hero_RouteA.dart';
 import 'package:learning_isolates/home/home_page_view.dart';
 import 'package:learning_isolates/imageParser/image_parser_view.dart';
 import 'package:learning_isolates/implicit_animation/implicit_animation_view.dart';
@@ -10,6 +12,7 @@ import 'package:learning_isolates/routes/route_constants.dart';
 import 'package:learning_isolates/routes/route_controller.dart';
 
 import '../animation_library/animation_library_view.dart';
+import '../hero_try/hero_routeB.dart';
 
 RouteController routeController = Get.put(RouteController());
 GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
@@ -60,6 +63,16 @@ GoRouter router = GoRouter(
           routeController.setContext(context);
           return LogoRotator(key: state.pageKey,);
         }),
+        GoRoute(path: RouteConstants.routeFlutterHeroTryRouteA,name: RouteConstants.routeFlutterHeroTryRouteA,builder: (context,state){
+          routeController.setContext(context);
+          return RouteA(key: state.pageKey,);
+        }),
+        GoRoute(path: RouteConstants.routeFlutterHeroTryRouteB,name: RouteConstants.routeFlutterHeroTryRouteB,builder: (context,state){
+          routeController.setContext(context);
+          return  RouteB(key: state.pageKey,);
+        }),
+        
+
       ],
     ),
   ],
