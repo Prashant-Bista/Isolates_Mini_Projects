@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_isolates/hero_try/hero_routeB.dart';
 import 'package:learning_isolates/routes/routes.dart';
 
 class RouteA extends StatelessWidget {
@@ -11,7 +12,7 @@ return Scaffold( appBar:AppBar(title: Text("RouteA"),),body:  Hero(
     tag: 'FlutterLogo',
     child: InkWell(
         onTap: (){
-          routeController.routeToHeroTryRouteB();
+          Navigator.of(context).pushNamed("/heroB");
         },
         child: FlutterLogo(size: 20,)),
 ),)  ;

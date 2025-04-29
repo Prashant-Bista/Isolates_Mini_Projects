@@ -1,57 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:learning_isolates/home/home_page_controller.dart';
 import 'package:learning_isolates/routes/routes.dart';
 
 class HomePageView extends StatelessWidget {
-  const HomePageView({super.key});
-
+  HomePageView({super.key});
+  HomePageController controller = Get.put(HomePageController());
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-      ),
-      body: Column(
-        spacing: 10,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToImageParser();
-          },child: Column(
-            children: [Icon(Icons.image,color: Colors.red,),Text("Image Parser")],
-          ),),
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.blue),
+      body: AnimatedBuilder(
+        animation: controller.controller,
+        builder:
+            (context, child) => ListView.builder(
+              itemCount: controller.homePageData.length,
+              itemBuilder: (context, index) {
+                return AnimatedBuilder(
+                  animation: controller.curvedController[index],
+                  builder: (context, child) {
+                    return SlideTransition(
+                      position: controller.slideTween[index],
+                      child: child,
+                    );
+                  },
 
-          MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToRiveExample();
-          },child: Column(
-            children: [Icon(Icons.r_mobiledata,color: Colors.red,),Text("Rive Example")],
-          ),),
-          MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToFileEncrypter();
-          },child: Column(
-            children: [Icon(Icons.enhanced_encryption,color: Colors.red,),Text("File Encrypter")],
-          ),),
-          MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToImplicitAnimations();
-          },child: Column(
-            children: [Icon(Icons.animation,color: Colors.red,),Text("Implicit Animations")],
-          ),),
-          MaterialButton(color:Colors.blue,onPressed:(){
-            routeController.routeToFlutterLogoRotator();
-          },child: Column(
-            children: [Icon(Icons.flutter_dash,color: Colors.red,),Text("Logo Rotator")],
-          ),),
-          MaterialButton(color:Colors.blue,onPressed:(){
-            Navigator.of(context).pushNamed("/hero");
-            // routeController.routeToHeroTryRouteA();
-          },child: Column(
-            children: [Icon(Icons.flutter_dash,color: Colors.red,),Text("Hero Try")],
-          ),)
-
-
-
-
-        ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 150),
+                    child: MaterialButton(
+                      height: 30,
+                      color: Colors.blue,
+                      onPressed: () {
+                        controller.homePageData[index].routeController();
+                      },
+                      child: Column(
+                        children: [
+                          Icon(
+                            controller.homePageData[index].iconData,
+                            size: 20,
+                            color: Colors.red,
+                          ),
+                          Text(controller.homePageData[index].name),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
       ),
     );
   }

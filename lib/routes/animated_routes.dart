@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:learning_isolates/home/home_page_view.dart';
 
 import '../hero_try/hero_RouteA.dart';
+import '../hero_try/hero_routeB.dart';
 
 class RouteGenerator {
   static Route<dynamic>? generateRoutes(RouteSettings settings) {
@@ -10,6 +11,9 @@ class RouteGenerator {
     }
     if (settings.name == "/hero") {
       return SlidingPageRouteBuilder(navigateTo: RouteA());
+    }
+    if (settings.name == "/heroB") {
+      return SlidingPageRouteBuilder(navigateTo: RouteB());
     }
   }
 }

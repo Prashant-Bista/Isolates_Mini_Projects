@@ -47,6 +47,16 @@ class RouteController extends GetxController {
         }
       }
     }
+  routeToJumpingDots({bool shouldRemovePrevious = false}) {
+    if (ctx != null) {
+      if (shouldRemovePrevious) {
+        ctx?.goNamed(RouteConstants.routeJumpingDots);
+      }
+      else {
+        ctx?.pushNamed(RouteConstants.routeJumpingDots);
+      }
+    }
+  }
     routeToFileEncrypter({bool shouldRemovePrevious = false}) {
       if (ctx != null) {
         if (shouldRemovePrevious) {
@@ -95,6 +105,17 @@ class RouteController extends GetxController {
       }
       else{
         ctx?.pushNamed(RouteConstants.routeFlutterLogoRotator);
+      }
+    }
+    }
+    routeToAnimatonPractice({bool shouldRemovePrevios=false}){
+    if(ctx!=null){
+      if(shouldRemovePrevios){
+        ctx?.goNamed(RouteConstants.routeAnimationPractice);
+
+      }
+      else{
+        ctx?.pushNamed(RouteConstants.routeAnimationPractice);
       }
     }
     }

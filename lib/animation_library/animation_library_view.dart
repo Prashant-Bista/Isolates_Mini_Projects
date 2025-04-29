@@ -67,7 +67,7 @@ class LogoRotator extends StatelessWidget {
     );
   }
 }
-
+ @immutable
 class Logo extends AnimatedWidget {
   Animation<double> controller;
   Logo({required this.controller}) : super(listenable: controller);
