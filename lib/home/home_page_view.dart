@@ -26,7 +26,7 @@ class HomePageView extends StatelessWidget {
                   },
 
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 150),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 2),
                     child: MaterialButton(
                       height: 30,
                       color: Colors.blue,

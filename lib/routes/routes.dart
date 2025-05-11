@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learning_isolates/animation_practice/animation_practice_view.dart';
+import 'package:learning_isolates/document_scanner/document_scanner_view.dart';
 import 'package:learning_isolates/file_encrypter/file_encrypter_view.dart';
 import 'package:learning_isolates/hero_try/hero_RouteA.dart';
 import 'package:learning_isolates/home/home_page_view.dart';
@@ -61,27 +62,54 @@ GoRouter router = GoRouter(
             return ImplicitAnimationView(key: state.pageKey);
           },
         ),
-        GoRoute(path: RouteConstants.routeFlutterLogoRotator,name: RouteConstants.routeFlutterLogoRotator,builder: (context,state){
-          routeController.setContext(context);
-          return LogoRotator(key: state.pageKey,);
-        }),
-        GoRoute(path: RouteConstants.routeFlutterHeroTryRouteA,name: RouteConstants.routeFlutterHeroTryRouteA,builder: (context,state){
-          routeController.setContext(context);
-          return RouteA(key: state.pageKey,);
-        }),
-        GoRoute(path: RouteConstants.routeFlutterHeroTryRouteB,name: RouteConstants.routeFlutterHeroTryRouteB,builder: (context,state){
-          routeController.setContext(context);
-          return  RouteB(key: state.pageKey,);
-        }),
-        GoRoute(path: RouteConstants.routeAnimationPractice,name: RouteConstants.routeAnimationPractice,builder: (context,state){
-          routeController.setContext(context);
-          return  AnimationPracticeView(key: state.pageKey,);
-        }),
-        GoRoute(path: RouteConstants.routeJumpingDots,name: RouteConstants.routeJumpingDots,builder: (context,state){
-          routeController.setContext(context);
-          return  JumpingDotsView(key: state.pageKey,);
-        })
-
+        GoRoute(
+          path: RouteConstants.routeFlutterLogoRotator,
+          name: RouteConstants.routeFlutterLogoRotator,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return LogoRotator(key: state.pageKey);
+          },
+        ),
+        GoRoute(
+          path: RouteConstants.routeFlutterHeroTryRouteA,
+          name: RouteConstants.routeFlutterHeroTryRouteA,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return RouteA(key: state.pageKey);
+          },
+        ),
+        GoRoute(
+          path: RouteConstants.routeFlutterHeroTryRouteB,
+          name: RouteConstants.routeFlutterHeroTryRouteB,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return RouteB(key: state.pageKey);
+          },
+        ),
+        GoRoute(
+          path: RouteConstants.routeAnimationPractice,
+          name: RouteConstants.routeAnimationPractice,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return AnimationPracticeView(key: state.pageKey);
+          },
+        ),
+        GoRoute(
+          path: RouteConstants.routeJumpingDots,
+          name: RouteConstants.routeJumpingDots,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return JumpingDotsView(key: state.pageKey);
+          },
+        ),
+        GoRoute(
+          path: RouteConstants.routeDocumentScanner,
+          name: RouteConstants.routeDocumentScanner,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return DocumentScannerView(key: state.pageKey);
+          },
+        )
       ],
     ),
   ],

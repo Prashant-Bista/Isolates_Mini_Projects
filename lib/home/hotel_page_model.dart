@@ -5,5 +5,4 @@ class HomePageModel{
   IconData iconData;
   String name;
   HomePageModel({required this.routeController,required this.iconData,required this.name,});
-  
 }

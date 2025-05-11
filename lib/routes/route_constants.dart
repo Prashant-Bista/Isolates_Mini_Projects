@@ -9,7 +9,7 @@ static const routeFlutterHeroTryRouteA = "/route-flutter-hero-try-RouteA";
   static const routeFlutterHeroTryRouteB = "/route-flutter-hero-try-RouteB";
   static const routeAnimationPractice = "/route-animation-practice";
   static const routeJumpingDots = "/route-jumping-dots";
-
+static const routeDocumentScanner = "/route-document-scanner";
 
 
 }

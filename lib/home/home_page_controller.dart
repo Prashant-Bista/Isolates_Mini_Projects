@@ -1,6 +1,5 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 import 'package:get/get.dart';
 import 'package:learning_isolates/home/hotel_page_model.dart';
 
@@ -43,7 +42,7 @@ class HomePageController extends GetxController
       name: "Hero Try",
     ),
     HomePageModel(
-      routeController: routeController.routeToAnimatonPractice,
+      routeController: routeController.routeToAnimationPractice,
       iconData: Icons.flutter_dash,
       name: "Animation Practice",
     ),
@@ -51,8 +50,12 @@ class HomePageController extends GetxController
       routeController: routeController.routeToJumpingDots,
       iconData: Icons.sports_volleyball,
       name: "Jumping dots",
+    ),
+    HomePageModel(
+      routeController: routeController.routeToDocumentScanner,
+      iconData: Icons.document_scanner,
+      name: "Document Scanner ",
     )
-
   ];
 
   @override
@@ -70,11 +73,11 @@ class HomePageController extends GetxController
   setValues() {
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
     )..repeat(reverse: true);
     curvedController.value = List.generate(homePageData.length, (index){
       final start = index*0.1;
-      final end = start+0.3;
+      final end = start+0.2;
      return CurvedAnimation(parent: controller, curve: Interval(start,end,curve: Curves.easeOut));
     });
     slideTween.value = List.generate(homePageData.length, (index)=>Tween<Offset>(begin:Offset(-0.2, -0.2),end:Offset(0.2, 0.2)).animate(curvedController[index]));

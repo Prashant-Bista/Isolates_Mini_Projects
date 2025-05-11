@@ -57,7 +57,8 @@ class RouteController extends GetxController {
       }
     }
   }
-    routeToFileEncrypter({bool shouldRemovePrevious = false}) {
+
+  routeToFileEncrypter({bool shouldRemovePrevious = false}) {
       if (ctx != null) {
         if (shouldRemovePrevious) {
           ctx?.goNamed(RouteConstants.routeFileEncrypt);
@@ -108,9 +109,9 @@ class RouteController extends GetxController {
       }
     }
     }
-    routeToAnimatonPractice({bool shouldRemovePrevios=false}){
+    routeToAnimationPractice({bool shouldRemovePrevious=false}){
     if(ctx!=null){
-      if(shouldRemovePrevios){
+      if(shouldRemovePrevious){
         ctx?.goNamed(RouteConstants.routeAnimationPractice);
 
       }
@@ -119,4 +120,16 @@ class RouteController extends GetxController {
       }
     }
     }
+  routeToDocumentScanner({bool shouldRemovePrevious=false}){
+    if(ctx!=null){
+      if(shouldRemovePrevious){
+        ctx?.goNamed(RouteConstants.routeDocumentScanner);
+
+      }
+      else{
+        ctx?.pushNamed(RouteConstants.routeDocumentScanner);
+      }
+    }
   }
+
+}
