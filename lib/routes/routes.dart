@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learning_isolates/animation_practice/animation_practice_view.dart';
 import 'package:learning_isolates/document_scanner/document_scanner_view.dart';
+import 'package:learning_isolates/download_pdf_API/download_pdf_API_view.dart';
 import 'package:learning_isolates/file_encrypter/file_encrypter_view.dart';
 import 'package:learning_isolates/hero_try/hero_RouteA.dart';
 import 'package:learning_isolates/home/home_page_view.dart';
@@ -109,7 +110,16 @@ GoRouter router = GoRouter(
             routeController.setContext(context);
             return DocumentScannerView(key: state.pageKey);
           },
+        ),
+        GoRoute(
+          path: RouteConstants.routeDocumentDownload,
+          name: RouteConstants.routeDocumentDownload,
+          builder: (context, state) {
+            routeController.setContext(context);
+            return DownloadPdfApiView(key: state.pageKey);
+          },
         )
+
       ],
     ),
   ],

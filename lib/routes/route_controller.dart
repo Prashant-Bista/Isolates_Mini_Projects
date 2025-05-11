@@ -131,5 +131,16 @@ class RouteController extends GetxController {
       }
     }
   }
+  routeToDocumentDownload({bool shouldRemovePrevious=false}){
+    if(ctx!=null){
+      if(shouldRemovePrevious){
+        ctx?.goNamed(RouteConstants.routeDocumentDownload);
+
+      }
+      else{
+        ctx?.pushNamed(RouteConstants.routeDocumentDownload);
+      }
+    }
+  }
 
 }

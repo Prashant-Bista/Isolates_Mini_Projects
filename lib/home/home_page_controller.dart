@@ -55,7 +55,13 @@ class HomePageController extends GetxController
       routeController: routeController.routeToDocumentScanner,
       iconData: Icons.document_scanner,
       name: "Document Scanner ",
+    ),
+    HomePageModel(
+      routeController: routeController.routeToDocumentDownload,
+      iconData: Icons.download,
+      name: "Document Scanner ",
     )
+
   ];
 
   @override
@@ -77,7 +83,7 @@ class HomePageController extends GetxController
     )..repeat(reverse: true);
     curvedController.value = List.generate(homePageData.length, (index){
       final start = index*0.1;
-      final end = start+0.2;
+      final end = start+0.1;
      return CurvedAnimation(parent: controller, curve: Interval(start,end,curve: Curves.easeOut));
     });
     slideTween.value = List.generate(homePageData.length, (index)=>Tween<Offset>(begin:Offset(-0.2, -0.2),end:Offset(0.2, 0.2)).animate(curvedController[index]));
